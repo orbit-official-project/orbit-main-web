@@ -1,0 +1,100 @@
+$background : #080808;
+
+.home-top {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-image: url('../public/home-background.png');
+    background-position: center;
+    background-size: cover;
+}
+
+.home-text {
+    h2, highlight {
+        &::selection {
+            -webkit-text-fill-color: white;
+        }
+        font-weight: 700;
+        letter-spacing: -5px;
+        margin: 0;
+        font-size: 70px;
+        background: linear-gradient(129deg, rgba(254,255,233,1) 39%, rgba(255,242,243,1) 56%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    p {
+        font-weight: 500;
+        font-size: 15px;
+        margin-top: 10px;
+    }
+    animation: home;
+    animation-duration: 2s; 
+    animation-timing-function: cubic-bezier(.12,.86,.29,.96);
+}
+
+.home-top-botton{
+    button {
+        svg {
+            width: 20px;
+            margin-left: 10px;
+        }
+        &:hover {
+            background-color: white;
+            color: $background;
+        }
+        font-family: 'Noto Sans KR', sans-serif;
+        color: white;
+        padding: 10px 20px;
+        background-color: #00000000;
+        border: 2px solid white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50px;
+        cursor: pointer;
+    }
+    div{
+        width: 10px;
+    }
+    display: flex;
+    margin-top: 30px;
+    justify-content: center;
+} 
+
+@keyframes home {
+    from {
+        transform: scale(90%);
+        opacity: 0%;
+    }
+    
+    to {
+        transform: scale(100%);
+        opacity: 100%;
+    }
+}
+
+@media screen and (max-width:768px) {
+    .home-text h2, .home-text highlight {
+        font-size: 50px;
+        letter-spacing: -3px;
+    }
+    .home-text {
+        transform: scale(75%);
+    }
+
+    @keyframes home {
+        from {
+            transform: scale(90%);
+            opacity: 0%;
+        }
+        
+        to {
+            transform: scale(75%);
+            opacity: 100%;
+        }
+    }
+}

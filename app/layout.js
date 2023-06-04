@@ -1,4 +1,6 @@
+import Link from 'next/link'
 import './globals.scss'
+import Header from './header'
 
 export const metadata = {
   title: 'Orbit',
@@ -8,7 +10,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="ko-KR">
-      <body>{children}</body>
+      <body>
+        <Header/>
+        {children}
+      </body>
     </html>
   )
 }

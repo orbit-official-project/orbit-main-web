@@ -1,11 +1,170 @@
-body {
-  background-color: #080808;
+$background : #080808;
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700&display=swap');
+
+* {
+  &::selection {
+    background-color: #0808086b;
+    color: white;
+  }
 }
 
-h2 {
-  color: #E64135;
+body {
+  margin: 0;
+  background-color: $background;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
+
+div {
+  box-sizing: border-box;
 }
 
 p {
   color: #ffffff;
+}
+
+.display-none {
+  display: none;
+}
+
+.header {
+  img {
+    width: 40px;
+    height: auto;
+  }
+  a{
+    &:hover{
+      color: white;
+    }
+    color: rgba(255, 255, 255, 0.644);
+    text-decoration: none;
+    margin-left: 20px;
+    margin-bottom: -5px;
+  }
+  height: fit-content;
+  z-index: 9;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  padding: 20px 30px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  transition: border-bottom 1s cubic-bezier(.75,.02,.36,.96);
+}
+
+.header-scroll {
+  a{
+    color: white;
+  }
+  background-color: $background;
+  border-bottom: 1px solid white;
+}
+
+.hamburger-container {
+  display: none;
+}
+
+.mobile-menu {
+  display: none;
+}
+
+.hamburger {
+  margin-right: 5px;
+  width: 40px;
+  display: none;
+  color: white;
+}
+
+.error {
+  h2 {
+    margin: 0;
+    color: white;
+    font-weight: 700;
+    font-size: 30px;
+  }
+  p {
+    font-size: 20px;
+    margin: 0;
+    font-weight: 300;
+  }
+  button {
+    &:hover{
+      background-color: white;
+      color: $background;
+    }
+    background-color: #00000000;
+    padding: 10px 20px;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50px;
+    margin-top: 30px;
+    cursor: pointer;
+  }
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+@media screen and (max-width : 768px){
+  .header {
+    padding: 20px 15px;
+  }
+  .header-pc-item-container{
+    display: none;
+  }
+  .hamburger-container {
+    display: block;
+  }
+  .hamburger {
+    cursor: pointer;
+    display: block;
+  }
+  .mobile-menu {
+    a { 
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.014);
+      }
+      width: 80vw;
+      padding: 10px 20px;
+      color: white;
+      text-decoration: none;
+      margin-bottom: 5px;
+      border-radius: 10px;
+    }
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding-top: 100px;
+    width: 100%;
+    height: 100vh;
+    background-color: $background;
+    z-index: 8;
+  }
+  .error {
+    h2 {
+      font-size: 20px;
+    }
+    p {
+      font-size: 15px;
+    }
+    button {
+      font-size: 10px;
+      margin-top: 20px;
+    }
+  }
 }
