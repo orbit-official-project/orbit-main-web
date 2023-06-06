@@ -13,7 +13,12 @@ body {
   margin: 0;
   background-color: $background;
   font-family: 'Noto Sans KR', sans-serif;
+  -ms-overflow-style: none;
 }
+::-webkit-scrollbar {
+  display: none;
+}
+
 
 .stop-scrolling {
   height: 100vh;
@@ -45,6 +50,7 @@ p {
     text-decoration: none;
     margin-left: 20px;
     margin-bottom: -5px;
+    transition: color 0.5s;
   }
   height: fit-content;
   z-index: 9;
@@ -57,7 +63,7 @@ p {
   padding: 20px 30px;
   left: 50%;
   transform: translate(-50%, 0);
-  transition: border-bottom 1s cubic-bezier(.75,.02,.36,.96);
+  transition: border-bottom 1s;
 }
 
 .header-scroll {

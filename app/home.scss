@@ -30,7 +30,7 @@ $background : #080808;
         margin-left: 10px;
     }
     p {
-        font-weight: 500;
+        font-weight: 300;
         font-size: 15px;
         margin-top: 10px;
         line-height: 160%;
@@ -102,7 +102,7 @@ $background : #080808;
     }
     position:  absolute;
     margin: 0 auto;
-    bottom: 30px;
+    bottom: 80px;
     width: 25px;
     height: 40px;
     border: 2px solid white;
@@ -111,6 +111,22 @@ $background : #080808;
     animation-duration: 2s; 
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
+    z-index: 9;
+}
+
+.home-first {
+    background-color: $background;
+    position: relative;
+    top: -100px;
+    height: 200px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    clip-path: polygon(0 0, 100% 33%, 100% 100%, 0 100%);
+}
+
+.home-first-devider {
+    height: 150px;
 }
 
 @keyframes textfocus {
@@ -127,14 +143,14 @@ $background : #080808;
 
 @keyframes mouse {
     0%{
-        bottom: 30px;
+        bottom: 120px;
     }
 
     50%{
-        bottom: 40px;
+        bottom: 100px;
     }
     100%{
-        bottom: 30px;
+        bottom: 120px;
     }
 }
 
@@ -157,6 +173,10 @@ $background : #080808;
     }
     .home-text {
         transform: scale(75%);
+    }
+    
+    .text-fucus-bar{
+        height: 50px;
     }
 
     @keyframes home {
