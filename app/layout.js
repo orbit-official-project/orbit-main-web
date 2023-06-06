@@ -1,5 +1,5 @@
 import '@/style/globals.scss'
-import Header from '../../components/header'
+import Header from '../components/header'
 
 export const metadata = {
   title: 'Orbit',
