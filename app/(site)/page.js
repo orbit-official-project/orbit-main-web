@@ -1,14 +1,16 @@
 'use client'
 import { useEffect } from 'react';
-import './home.scss'
+import '@/style/home.scss'
 
 export default function Home() {
   useEffect(()=>{
+    //이미 반복문이 실행중이라면, 반복 중인 모든 함수 중지
     let highestIntervalId = setInterval(";");
     for (let i = 0 ; i < highestIntervalId ; i++) {
       clearInterval(i);
     }
 
+    
     function sleep(sec) {
       return new Promise(resolve => setTimeout(resolve, sec * 1000));
     }

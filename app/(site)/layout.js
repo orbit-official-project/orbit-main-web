@@ -1,6 +1,5 @@
-import Link from 'next/link'
-import './globals.scss'
-import Header from './header'
+import '@/style/globals.scss'
+import Header from '../../components/header'
 
 export const metadata = {
   title: 'Orbit',
