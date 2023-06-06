@@ -26,14 +26,25 @@ $background : #080808;
         background-clip: text;
         -webkit-text-fill-color: transparent;
     }
+    highlight {
+        margin-left: 10px;
+    }
     p {
         font-weight: 500;
         font-size: 15px;
         margin-top: 10px;
+        line-height: 160%;
     }
     animation: home;
     animation-duration: 2s; 
     animation-timing-function: cubic-bezier(.12,.86,.29,.96);
+}
+
+.home-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
 }
 
 .home-top-botton{
@@ -64,6 +75,68 @@ $background : #080808;
     margin-top: 30px;
     justify-content: center;
 } 
+
+.text-fucus-bar {
+    margin-left: 10px;
+    margin-top: 10px;
+    width: 2px;
+    height: 70px;
+    background-color: white;
+    animation: textfocus;
+    animation-duration: 2s; 
+    animation-timing-function: cubic-bezier(.82,0,.16,.98);
+    animation-iteration-count: infinite;
+}
+
+
+.mouse-body {
+    .mouse-button {
+        position: relative;
+        width: 8px;
+        height: 8px;
+        border-radius: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5px;
+        background-color: white;
+    }
+    position:  absolute;
+    margin: 0 auto;
+    bottom: 30px;
+    width: 25px;
+    height: 40px;
+    border: 2px solid white;
+    border-radius: 30px;
+    animation: mouse;
+    animation-duration: 2s; 
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+@keyframes textfocus {
+    0%{
+        opacity: 0%;
+    }
+    50%{
+        opacity: 100%;
+    }
+    100%{
+        opacity: 0%;
+    }
+}
+
+@keyframes mouse {
+    0%{
+        bottom: 30px;
+    }
+
+    50%{
+        bottom: 40px;
+    }
+    100%{
+        bottom: 30px;
+    }
+}
 
 @keyframes home {
     from {

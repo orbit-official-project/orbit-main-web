@@ -1,32 +1,48 @@
 'use client'
-import { useEffect } from 'react'
+import { useEffect } from 'react';
 import './home.scss'
 
 export default function Home() {
-  useEffect(()=>{
-    function changeTitle(){
-      let title = document.getElementById('title-highlight');
-      if(title.innerText == '트랜디한'){
-        title.innerText = '똑똑한'
+  
+  function sleep(sec) {
+    return new Promise(resolve => setTimeout(resolve, sec * 1000));
+  }
+
+  async function changeTitle(){
+    if(typeof window !== 'object') return;
+    let title = document?.getElementById('title-highlight');
+    let texts = ['믿음직한', '똑똑한', '안전한', '트랜디한'];
+    let text = '';
+    
+    for(let i=0; i<texts.length; i++){
+      if(texts[i]==title.innerText && i != texts.length-1){
+        text = texts[i+1];
       }
-      else if(title.innerText == '똑똑한'){
-        title.innerText = '안전한'
-      }
-      else if(title.innerText == '안전한'){
-        title.innerText = '믿을만한'
-      }
-      else {
-        title.innerText = '트랜디한'
+      else if(texts[i] == title.innerText && i == texts.length-1){
+        text = texts[0];
       }
     }
 
-    setInterval(changeTitle, 2000)
-  })
+    for(let i=0; i<text.length; i++){
+      title.innerText = title.innerText.slice(0, -1);
+      await sleep(0.2);
+    }
+
+    title.innerText = ''
+    await sleep(0.2);
+
+    for(let i=0; i<text.length; i++){
+      title.innerText = title.innerText + text.charAt(i);
+      await sleep(0.2);
+    }
+  }
+  setInterval(changeTitle, 5000);
+
   return (
     <>
       <div className='home-top'>
         <div className='home-text'>
-          <h2>누구보다 <highlight id='title-highlight'>트랜디한</highlight></h2>
+          <h2 className='home-title'>누구보다 <highlight id='title-highlight'>트랜디한</highlight><div className='text-fucus-bar'></div></h2>
           <p>
             게이머를 위한 탈 중앙화 SNS 플랫폼, 오르빗입니다<br/>
             게임 속 나만의 소중한 순간들을<br/>
@@ -47,6 +63,9 @@ export default function Home() {
               </svg>
             </button>
           </div>
+        </div>
+        <div className='mouse-body'>
+            <div className='mouse-button'></div>
         </div>
       </div>
     </>
