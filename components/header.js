@@ -22,7 +22,7 @@ export default function Header(){
             <div className="header-wrap" id='header'>
                 <div className='header'>
                     <Link className="header-logo" href='/'>
-                        <Image src={logo}/>
+                        <Image src={logo} alt="orbit-logo"/>
                     </Link>
                     <div className='header-pc-item-container'>
                         <MenuItem/>
