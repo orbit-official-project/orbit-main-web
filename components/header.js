@@ -6,7 +6,7 @@ import { useEffect } from "react"
 
 export default function Header(){
     useEffect(()=>{
-        let header = document.querySelector('.header');
+        let header = document.querySelector('#header');
         
         document.addEventListener('scroll', ()=>{
             if(window.scrollY >= header.offsetHeight){
@@ -19,14 +19,16 @@ export default function Header(){
     },[])
     return(
         <>
-            <div className='header' id='header'>
-                <Link className="header-logo" href='/'>
-                    <Image src={logo}/>
-                </Link>
-                <div className='header-pc-item-container'>
-                    <MenuItem/>
+            <div className="header-wrap" id='header'>
+                <div className='header'>
+                    <Link className="header-logo" href='/'>
+                        <Image src={logo}/>
+                    </Link>
+                    <div className='header-pc-item-container'>
+                        <MenuItem/>
+                    </div>
+                    <Hamburger/>
                 </div>
-                <Hamburger/>
             </div>
             <MobileMenu/>
         </>

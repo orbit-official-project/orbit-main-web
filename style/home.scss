@@ -111,7 +111,7 @@ $background : #080808;
     animation-duration: 2s; 
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
-    z-index: 9;
+    z-index: 5;
 }
 
 .home-first {
@@ -157,7 +157,12 @@ $background : #080808;
 @keyframes home {
     from {
         transform: scale(90%);
+        filter: blur(1.5rem);
         opacity: 0%;
+    }
+
+    30%{
+        filter: blur(0);
     }
     
     to {

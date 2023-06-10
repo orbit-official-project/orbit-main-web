@@ -1,6 +1,4 @@
-body {
-  background: #080808;
-}
+$background: #080808;
 
 * {
   margin: 0;
@@ -8,27 +6,26 @@ body {
   box-sizing: border-box;
   outline: 0;
 }
-.register-form-header {
-  color: #000000;
+.login-form-header {
+  color: #ffffff;
   font-weight: bold;
   text-align: center;
   margin-bottom: 40px;
   font-size: 30px;
 }
-.register-form-wrap {
+.login-form-wrap {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
 }
 
-.register-form {
-  background: #ffffff;
+.login-form {
   padding: 40px 20px;
   height: 600px;
   width: 400px;
   border-radius: 5px;
-  border: 1px solid white;
+  color: white;
 }
 
 .input-group {
@@ -45,34 +42,32 @@ body {
   outline: none;
   border: 1px solid #bdbdbd;
   border-radius: 3px;
-  color: #000000;
+  color: #ffffff;
   font-size: 18px;
   transition: all 0.3s ease;
 }
 
 .input:focus {
-  border: 1px solid #000000;
+  border: 1px solid #E64135;
   transition: all 0.2s ease;
-}
-.input:valid {
-  border: 1px solid #000000;
 }
 
 .input:not(:focus):valid {
   border: 1px solid #bdbdbd;
 }
 .input:not(:focus):valid + .placeholder {
-  color: #8f8f8f;
+  color: #535353
 }
 
 .input:focus + .placeholder,
-.input:valid + .placeholder {
+.input:valid + .placeholder, .writed + .placeholder {
   top: -13px;
   left: 8px;
-  color: #000000;
-  background-color: #ffffff;
+  color: #ffffff;
+  background-color: $background;
   font-size: 14px;
 }
+
 
 .placeholder {
   font-weight: 400;
@@ -88,7 +83,7 @@ body {
 
 .btn {
   width: 100%;
-  background-color: #252525;
+  background-color: $background;
   border: 1px solid white;
   color: rgb(255, 255, 255);
   padding: 12px;
@@ -99,7 +94,8 @@ body {
   cursor: pointer;
 }
 .btn:hover {
-  background: opacify($color: #3a3a3a, $amount: 0.5);
+  color: $background;
+  background: white;
   transition: all 0.3s ease;
 }
 
@@ -109,5 +105,5 @@ hr {
 p {
   text-align: center;
   margin-top: 10px;
-  color: #000000;
+  color: #ffffff;
 }

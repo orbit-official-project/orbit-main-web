@@ -4,11 +4,6 @@ import '@/style/home.scss'
 
 export default function Home() {
   useEffect(()=>{
-    //이미 반복문이 실행중이라면, 반복 중인 모든 함수 중지
-    let highestIntervalId = setInterval(";");
-    for (let i = 0 ; i < highestIntervalId ; i++) {
-      clearInterval(i);
-    }
 
     
     function sleep(sec) {
@@ -18,7 +13,7 @@ export default function Home() {
     async function changeTitle(){
       if(typeof window !== 'object') return;
       let title = document?.getElementById('title-highlight');
-      let texts = ['믿음직한', '똑똑한', '안전한', '트랜디한'];
+      let texts = ['믿음직한', '똑똑한', '안전한', '트렌디한'];
       let text = '';
       
       for(let i=0; i<texts.length; i++){
@@ -51,7 +46,7 @@ export default function Home() {
 
     changeTitle()
   
-    setInterval(changeTitle, 5000);
+    let textInterval = setInterval(changeTitle, 5000);
   }, [])
 
   return (

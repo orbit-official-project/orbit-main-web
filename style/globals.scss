@@ -4,8 +4,8 @@ $background : #080808;
 
 * {
   &::selection {
-    background-color: #0808086b;
-    color: white;
+    background-color: #141414;
+    color: rgb(255, 255, 255);
   }
 }
 
@@ -55,14 +55,25 @@ p {
     transition: color 0.5s;
   }
   height: fit-content;
-  z-index: 9;
+  z-index: 99;
   width: 100%;
   max-width: 1200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0px 30px;
   position: fixed;
-  padding: 20px 30px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+.header-wrap {
+  z-index: 9;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  padding: 40px 30px;
   left: 50%;
   transform: translate(-50%, 0);
   transition: border-bottom 1s;
