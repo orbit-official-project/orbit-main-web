@@ -112,6 +112,7 @@ $background : #080808;
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     z-index: 5;
+    transition: opacity 0.5s ;
 }
 
 .home-first {
