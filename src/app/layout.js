@@ -1,5 +1,6 @@
 import '@/style/globals.scss';
-import Header from '../components/header';
+import Header from '@/components/global/header';
+import { Providers } from '@/src/redux/provider';
 
 export const metadata = {
 	title: 'Orbit',
@@ -10,8 +11,10 @@ export default function RootLayout({ children }) {
 	return (
 		<html lang="ko-KR">
 			<body>
-				<Header />
-				{ children }
+				<Providers>
+					<Header />
+					{children}
+				</Providers>
 			</body>
 		</html>
 	);

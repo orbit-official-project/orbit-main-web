@@ -120,8 +120,8 @@ function MenuItem() {
 	return (
 		<>
 			<Link onClick={ closeMenu } href="/about">오르빗</Link>
-			<Link onClick={ closeMenu } href="/servers">서버 목록</Link>
-			<Link onClick={ closeMenu } href="/servers/new">서버 만들기</Link>
+			<Link onClick={ closeMenu } href="/server">서버 목록</Link>
+			<Link onClick={ closeMenu } href="/server/new">서버 만들기</Link>
 			<Link onClick={ closeMenu } href="/team">팀</Link>
 			<Link onClick={ closeMenu } href="/supporter">서포터</Link>
 		</>

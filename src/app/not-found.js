@@ -1,5 +1,10 @@
 'use client';
 
+export const metadata = {
+	title: 'Not Found - Orbit',
+	description: '게이머를 위한 차세대 SNS 플랫폼, 오르빗입니다.',
+};
+
 export default function NotFound() {
 	return (
 		<div className="error">

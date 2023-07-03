@@ -4,7 +4,8 @@ import '@/style/home.scss';
 
 export default function Home() {
 	useEffect(() => {
-		async function changeText(){
+		async function changeText() {
+
 			function sleep(sec) {
 				return new Promise(resolve => setTimeout(resolve, sec * 1000));
 			}
@@ -47,7 +48,7 @@ export default function Home() {
 			
 			let currentInterval = setInterval(changeTitle, 5000);
 
-			return currentInterval
+			return clearInterval(currentInterval)
 		}
 
 		let textInterval = changeText()
@@ -55,10 +56,10 @@ export default function Home() {
 		let mouse = document.querySelector('.mouse-body')
 
 		document.addEventListener('scroll', ()=>{
-			if(window.scrollY >= 80){
+			if (window.scrollY >= 80) {
 				mouse.classList.add('opacity-zero')
 			}
-			else{
+			else {
 				mouse.classList.remove('opacity-zero')
 			}
 		});
